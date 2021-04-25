@@ -1,0 +1,22 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<img src="{{ user.profile.p_image.url }}" class="img-circle" alt="" width="200" height="200">
+
+<br>
+
+ {{user.first_name}}<br> {{user.last_name}}<br>{{user.username}}
+
+<br>
+ {{user.email}}
+
+<br>
+
+<a href = "{% url 'prof_edit' %}">edit</a> profile info? <br>
+
+<a href = "{% url 'password' %}">change</a> password?<br>
+<br>
+or <a href = "{% url 'post_list' %}">continue</a> writing posts..
+{% endblock %}

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'users',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -113,6 +115,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'post_list'
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,0 +1,23 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post", enctype="mutipart/form-data">
+    {% csrf_token %}
+
+    {{form1|crispy}}
+
+    <br>
+
+    {% csrf_token %}
+    
+    {{form2|crispy}}
+
+<br><br>
+
+    <button type="submit">Sign up</button>
+  </form>
+<br><br>
+  already have an account? click <a href="{% url 'login' %}">here</a> to login
+{% endblock %}

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users',
     'crispy_forms',
+    'messaging',
+    'chat',
+    'channels',
+    # 'django_messages',
+    # 'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +76,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'project2.wsgi.application'
+ASGI_APPLICATION = 'project2.asgi.application'
 
 
 # Database
@@ -124,3 +130,8 @@ LOGIN_REDIRECT_URL = 'post_list'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# ADMIN_MEDIA_PREFIX = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

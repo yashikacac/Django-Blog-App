@@ -1,0 +1,14 @@
+{% extends 'messaging/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<!-- <a href="{% url 'write_msg' %}"><input type="button"  value = "new" class  ="btn btn-default"></a> -->
+<form method = "POST" action = "/message/msg/">
+	{% csrf_token %}
+    {{form|crispy}}
+	<input type = "submit" value = "send" class  ="btn btn-default">
+</form>
+
+{% endblock %}

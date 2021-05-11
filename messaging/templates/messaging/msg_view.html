@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+{% for content in conversation %}
+
+
+<b>{{content.sender}}: </b>{{content.text}}	
+<br><br>
+
+{% endfor %}
+
+<!-- <form method = "POST" action = ".">
+	{% csrf_token %}
+    {{form|crispy}}
+	<input type = "submit" value = "send" class  ="btn btn-default">
+</form> -->
+
+{% endblock %}

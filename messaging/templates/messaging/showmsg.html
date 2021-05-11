@@ -1,0 +1,16 @@
+<!-- This template shows all the messages as that in when you open admin. -->
+
+{% extends 'messaging/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% for x in new_msg %}
+<br>
+<h5>from {{x.sender}} to {{x.receiver}} </h5>
+Text : {{x.text}} <br>
+
+{% endfor %}
+
+
+{% endblock %}

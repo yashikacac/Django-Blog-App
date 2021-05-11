@@ -1,0 +1,12 @@
+{% extends 'messaging/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<a href="{% url 'write_msg' %}"><input type="button"  value = "new" class  ="btn btn-default"></a>
+<br>
+{% for x in msgs %}
+	<a href="{% url 'msg_view' var=x.pk %}">{{x}}</a><br>
+	<!-- var=x.pk -->
+	{% endfor %}
+{% endblock %}

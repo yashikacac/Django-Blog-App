@@ -3,13 +3,48 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit">Login</button>
-  </form>
-  <br><br>
-  don't have an account? register yourself <a href="/signup/">here</a>
+<style>
+  body{
+    padding-top: 10%;
+    padding-left: 35%;
+    background-color: rgba(143, 136, 136,0.2);
+    font-family: 'raleway',sans-serif;
+  }
+  input{
+    background: transparent!important;
+		border:none!important;
+		border-bottom: 2px solid #15171c!important;
+		outline: none!important;
+		box-shadow: none!important;
+    border-radius: 0px!important;
+  }
+  h2{
+    padding-bottom: 10px;
+  }
+
+
+
+</style>
+
+  <div class="login">
+    <div class="container login-container">
+      <div class="row nav-bar">
+        
+        <div class="col-md-6" >
+          <h2>Login</h2>
+          <form method="post">
+            <br>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br><br>
+            <button type="submit">Login</button>
+          </form>
+          <br><br>
+          don't have an account? register yourself <a href="/signup/">here</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

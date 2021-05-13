@@ -78,12 +78,12 @@
     padding-bottom: 40px;
   }
 </style>
-<div class="login">
+<div class="signup">
   <div class="container login-container">
     <div class="row nav-bar">
 
       <div class="col-md-5 col-md-offset-1" id="signup1">
-        <h2>Sign up</h2>
+        <h2>Create Account</h2>
         <form method="post" , enctype="mutipart/form-data">
           {% csrf_token %}
           {{form1|crispy}}

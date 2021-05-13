@@ -32,7 +32,8 @@
 }
 
 .content {
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    width: 80vw;
 }
 
 
@@ -46,6 +47,9 @@ h1, h2, h3, h4 {
 
 .save {
     float: right;
+}
+.button{
+    background-color: #e7e7e7; color: black;;
 }
 
 .post-form textarea, .post-form input {
@@ -61,6 +65,8 @@ h1, h2, h3, h4 {
 }
 
 .post {
+    border-radius: 20px;
+    /* border-radius: 40px; */
     padding: 40px;
     transition: box-shadow .3s;
     background-color: #DCDCDC;
@@ -75,12 +81,22 @@ h1, h2, h3, h4 {
 
 .post h2 a, .post h2 a:visited {
     color: #000000;
+
+}
+p{
+    color: rgba(5, 5, 5,0.5)!important;
+}
+.detail{
+    padding-top: 20px;
+}
+.edit{
+    padding-top: 50px;
 }
 
-.spark{
+/* .spark{
 
     padding-bottom: 40px;
-}
+} */
 
 .arrow{
 
@@ -93,9 +109,13 @@ h1, h2, h3, h4 {
 }
 
 .navbar{
-    background-color: rgb(202, 75, 124) !important;
+    /* background-color: rgb(202, 75, 124) !important; */
+    padding-top: 20px;
+    background-color: rgba(99, 5, 99,0.8);
+    height: 80px;
 }
 .navbar-brand{
+    padding-left: 50px;
     color:white!important;
     font-family: Raleway;
 }
@@ -153,7 +173,7 @@ $(document).ready(function(){
             <div class="container-fluid">
             <div class="navbar-header">
 
-            <a class="navbar-brand" href="{% url 'post_list' %}">Blog</a>
+            <a class="navbar-brand" href="{% url 'post_list' %}">My Blog</a>
              </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <!-- <ul class="nav navbar-nav"> -->

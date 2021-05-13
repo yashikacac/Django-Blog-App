@@ -1,19 +1,23 @@
-  
 {% extends 'users/base.html' %}
+{% load static %}
+
 {% load crispy_forms_tags %}
 
 {% block content %}
 <style>
   body{
+
     padding-top: 10%;
-    padding-left: 35%;
-    background-color: rgba(143, 136, 136,0.2);
+    /* padding-left: 35%; */ 
+    /* background-color: rgba(143, 136, 136,0.2); */
     font-family: 'raleway',sans-serif;
   }
   input{
     background: transparent!important;
 		border:none!important;
-		border-bottom: 2px solid #15171c!important;
+    border-bottom: 2px solid rgba(99, 5, 99,0.5)!important;
+
+		/* border-bottom: 2px solid #15171c!important; */
 		outline: none!important;
 		box-shadow: none!important;
     border-radius: 0px!important;
@@ -21,7 +25,40 @@
   h2{
     padding-bottom: 10px;
   }
+  #login2{
+    height: 71.5vh;
+    /* background-color: rgba(92, 89, 90,0.3) !important; */
 
+    background-color: rgba(99, 5, 99,0.5);
+     /* border-style: solid;  */
+     /* border-color: rgba(99, 5, 99,0.5); */
+     /* background-image: image(url("{% static 'img/download.png' %}")); */
+    /* background-image: url("{% static 'img/download.png' %}"); */
+    /* background-size: cover; position: relative; */
+  }
+  #login1{
+    /* color: rgb(153, 88, 153); */
+    height: 71.5vh;
+    color:rgba(99, 5, 99,1) ;
+    border-style: solid;
+    border-color: rgba(99, 5, 99,0.5);
+  }
+  .content{
+    color: white;
+    padding-top: 60px;
+    font-family: 'Merriweather', serif;
+    font-size: 60px;
+    padding-left: 55px;
+    /* align-self: center; */
+    /* padding: 80px; */
+    /* font-weight: bold; */
+  }
+  span{
+    padding-left: 55px;
+  }
+  .app{
+    padding-left: 110px;
+  }
 
 
 </style>
@@ -29,8 +66,13 @@
   <div class="login">
     <div class="container login-container">
       <div class="row nav-bar">
-        
-        <div class="col-md-6" >
+        <div class="col-md-5 col-md-offset-1" id="login2">
+          <!-- <img src="{% static 'img/abc.jpg' %}" alt="My image" width="100%" height="100%"> -->
+          <div class="content">
+            <p><span>Welcome</span></p> to your blog <span class="app">app</span>
+          </div>
+        </div>
+        <div class="col-md-5" id="login1" >
           <h2>Login</h2>
           <form method="post">
             <br>
@@ -42,6 +84,7 @@
           <br><br>
           don't have an account? register yourself <a href="/signup/">here</a>
         </div>
+
         
       </div>
     </div>

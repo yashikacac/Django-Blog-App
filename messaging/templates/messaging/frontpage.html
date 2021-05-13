@@ -3,10 +3,49 @@
 
 
 {% block content %}
-<a href="{% url 'write_msg' %}"><input type="button"  value = "new" class  ="btn btn-default"></a>
-<br>
-{% for x in msgs %}
-	<a href="{% url 'msg_view' var=x.pk %}">{{x}}</a><br>
-	<!-- var=x.pk -->
-	{% endfor %}
+
+<div class="frontpage">
+	<div class="container">
+		<div class="row nav-bar">
+			<div class="col-md-5 col-md-offset-1" id="block1">
+				<!-- Messages <a href="{% url 'write_msg' %}"><input type="button" value=" + new" class="btn btn-primary"></a> -->
+					Messages
+					<a class="add-messages" href="{% url 'write_msg' %}"><button class="button"><span class="glyphicon glyphicon-envelope"></span>&ensp;new</button></a>
+
+				<!-- <br> -->
+				<div class="w3-container">
+					<ul class="w3-ul w3-card-4">
+							{% for x in msgs %}
+							<li class="w3-bar">
+							<a href="{% url 'msg_view' var=x.pk %}">
+								{{x}}
+							</a>
+						</li>
+							{% endfor %}
+					</ul>
+				</div>
+			</div>
+
+			<!-- {% for x in msgs %}
+				<div class="x">
+					<a href="{% url 'msg_view' var=x.pk %}">
+						<div class="username">
+							{{x}}
+						</div>
+					</a>
+				</div>
+				{% endfor %} -->
+
+		<div class="col-md-5" id="block2">
+			<span class="glyphicon glyphicon-folder-open"></span>
+			<!-- <div class="add-messages">
+				<a href="{% url 'write_msg' %}"><button class="button"><span class="glyphicon glyphicon-envelope"></span>&ensp;new</button></a>
+
+			</div> -->
+				<!-- <a href="{% url 'write_msg' %}"><input type="button" value=" + new" class="btn btn-primary"></a> -->
+			
+		</div>
+	</div>
+	</div>
+</div>
 {% endblock %}

@@ -4,19 +4,23 @@
 
 {% block content %}
 
+<div class="msg_view">
+	<div class="card">
+		<div class="card-body">
+			{% for content in conversation %}
 
-{% for content in conversation %}
+		
+			<!-- <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;"> -->
+			<b class="card-subtitle mb-2 text-muted">{{content.sender}}: </b>{{content.text}}	
+			<br><br>
+
+			{% endfor %}
+		</div>
+	</div>
+</div>
 
 
-<b>{{content.sender}}: </b>{{content.text}}	
-<br><br>
 
-{% endfor %}
 
-<!-- <form method = "POST" action = ".">
-	{% csrf_token %}
-    {{form|crispy}}
-	<input type = "submit" value = "send" class  ="btn btn-default">
-</form> -->
 
 {% endblock %}

@@ -1,130 +1,93 @@
 {% load static %}
 <html>
-    <head>
-        <title>Blog</title>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<head>
+    <title>Blog</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style class="css">
+        body {
+            font-family: 'raleway', 'sans-serif';
+        }
 
 
 
-<style class="css">
+        .navbar {
+            padding-top: 20px;
+            background-color: rgba(99, 5, 99, 0.8);
+            height: 80px;
+        }
 
-.page-header {
-    background-color: #794bc4;
-    margin-top: 0;
-    height: 120px;
-    width: 1265px;
+        .navbar-brand {
+            padding-left: 50px;
+            color: white !important;
+            font-family: Raleway;
+        }
+
+        #block2 {
+            background-color: rgba(73, 36, 36, 0.2);
+            height: 82.5vh;
+
+
+        }
+
+        #block1 {
+            height: 82.5vh;
+
+            padding-top: 10px;
+            /* height: 130vh; */
+            border-style: solid;
+            border-color: rgba(73, 36, 36, 0.2);
+        }
+        .button{
+            padding: 5px;
+            border-radius: 40px;
+            /* background-color: white; */
+            /* padding: 10px; */
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+
+        .w3-container{
+            padding-top: 30px;
+        }
+        .add-messages{
+            padding-left: 290px;
+        }
+        .glyphicon-folder-open{
+            padding: 200px;
+            font-size: 80px;
+        }
+.card{
+    width: 20px;
+    border-style: solid;
 }
-
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: white;
-    font-size: 20pt;
-    text-decoration: none;
-}
-
-.content {
-    margin-left: 40px;
-}
-
-
-h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
-}
-
-.date {
-    color: #828282;
-}
-
-.save {
-    float: right;
-}
-
-.post-form textarea, .post-form input {
-    width: 50%;
-}
-
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 70px;
-    margin-top: 10px;
-}
-
-.post {
-    padding: 40px;
-    transition: box-shadow .3s;
-    background-color: #DCDCDC;
-}
-
-.post:hover{
-
-    box-shadow: 0px 0px 100px #A9A9A9 inset; 
-    border-radius: 15px;
-}
-
-
-.post h2 a, .post h2 a:visited {
-    color: #000000;
-}
-
-.spark{
-
-    padding-bottom: 40px;
-}
-
-.arrow{
-
-    width: 1em;
-    height: 1em;
-    transform: rotate(-45deg);
-    border-bottom: 4px solid #fff;
-    border-left: 4px solid #fff;
-    cursor: pointer
-}
-
-.navbar{
-    background-color: #ca4b7c !important;
-}
-.navbar-brand{
-    color:white!important;
-    font-family: Raleway;
-}
-
-.lower_class{
-
-height: 100px;
-width: 1140px;
-border-radius: 20px 20px 0px 0px;
-background-color: #794bc4;
-
-
-}
-
-</style>
+    </style>
 
 
 
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-$(document).ready(function(){
-  $(".reply_btn").click(function(event){
-    event.preventDefault();
-    $(this).parent().next(".reply").fadeToggle();
-});
+        $(document).ready(function () {
+            $(".reply_btn").click(function (event) {
+                event.preventDefault();
+                $(this).parent().next(".reply").fadeToggle();
+            });
 
-});
+        });
 
-</script>
+    </script>
 
 
 
@@ -133,39 +96,40 @@ $(document).ready(function(){
 
 
 
-    
-    </head>
+
+</head>
 
 
 
-    <body>
+<body>
 
-        	{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
 
-            <nav class="navbar" >
-            <div class="container-fluid">
+    <nav class="navbar">
+        <div class="container-fluid">
             <div class="navbar-header">
 
-            <a class="navbar-brand" href="{% url 'post_list' %}">Blog</a>
-             </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span></a></li>
-      </ul>
-    </div>
+                <a class="navbar-brand" href="{% url 'post_list' %}">Blog</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span></a></li>
+                </ul>
+            </div>
 
-  </div>
-</nav>
-
-
-            {% endif %}
-        
-        <div class="content container">
-            
-                    {% block content %}
-                    {% endblock %}
-                
         </div>
-    </body>
+    </nav>
+
+
+    {% endif %}
+
+    <div class="content container">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+</body>
+
 </html>

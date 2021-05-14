@@ -1,4 +1,4 @@
-# Django-Blog-App
+# _Django-Blog-App_
 The Blog app allows you to post, edit, save, and view your blog posts. You can also chat with other users and create a note to yourself (by keeping your texts to yourself ofc XD)
 - Users can log in or signup
 - Users can add posts only after logging in by clicking on a plus sign.

@@ -4,6 +4,7 @@
 {% block content %}
 <style>
   body {
+    background-color: rgba(99, 5, 99,0.5);
     padding-top: 5%;
     /* padding-left: 35%; */
     /* background-color: rgba(143, 136, 136, 0.2); */
@@ -18,14 +19,21 @@
   }
 
   #signup1 {
+    color: rgba(99, 5, 99,1);
+    background-color: rgb(247, 243, 243);
     border-style: solid;
-    border-color: rgba(63, 62, 62, 0.1);
+    /* border-color: rgba(63, 62, 62, 0.1); */
+    border-color: rgba(99, 5, 99,0.5);
+
   }
 
   input {
+
     background: transparent !important;
     border: none !important;
-    border-bottom: 2px solid #15171c !important;
+    /* border-bottom: 2px solid #15171c !important; */
+    border-bottom: 2px solid rgba(99, 5, 99,1) !important;
+
     outline: none !important;
     box-shadow: none !important;
     border-radius: 0px !important;
@@ -82,7 +90,7 @@
   <div class="container login-container">
     <div class="row nav-bar">
 
-      <div class="col-md-5 col-md-offset-1" id="signup1">
+      <div class="col-md-6 col-md-offset-3" id="signup1">
         <h2>Create Account</h2>
         <form method="post" , enctype="mutipart/form-data">
           {% csrf_token %}
@@ -96,7 +104,7 @@
         <br><br>
         already have an account? click <a href="{% url 'login' %}">here</a> to login
       </div>
-      <div class="col-md-5" id="signup2">
+      <!-- <div class="col-md-5" id="signup2">
         <div class="button-signup">
           <div class="button-facebook">
             <button class="button button2"><i class="fa fa-facebook-f"> </i>&ensp;Signup with facebook</button>
@@ -109,7 +117,7 @@
           </div>
 
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

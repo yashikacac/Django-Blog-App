@@ -6,14 +6,16 @@
 
 <div class="msg_view">
 	<div class="card">
-		<div class="card-body">
+		<div class="alert alert-danger" role="alert">
 			{% for content in conversation %}
 
 		
 			<!-- <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;"> -->
-			<b class="card-subtitle mb-2 text-muted">{{content.sender}}: </b>{{content.text}}	
-			<br><br>
+			<div class="alert alert-info" role="alert">
 
+			<b class="card-subtitle mb-2 text-muted">{{content.sender}}: </b>{{ content.text }}
+			</div>	
+			<br>
 			{% endfor %}
 		</div>
 	</div>
